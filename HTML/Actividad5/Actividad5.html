@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 5 - Formularios en HTML</title>
+    <style>
+        /*Comentarios */
+        h1 {
+            color: rgb(123, 25, 25);
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        .obligatorio {
+            color: brown;
+            font-weight: bold;
+        }
+
+        #userName {
+            background-color: rgb(219, 174, 174);
+            border: 0;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<!-- Esto es un comentario y no se renderiza -->
+
+<body>
+    <header>
+        <h1>Actividad 5 - Formularios en HTML</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Controles de formulario</h2>
+            <form action="" method="post">
+                <fieldset>
+                    <legend>Datos personales</legend>
+                    <label for="userName" class="obligatorio">Nombre:</label>
+                    <input type="text" name="userName" id="userName" autofocus required />
+                    <br>
+                    <br>
+                    <label for="email" class="obligatorio">Correo Electrónico:</label>
+                    <input type="email" name="email" id="email" required>
+                    <br>
+                    <br>
+                    <label for="url">URL:</label>
+                    <input type="url" name="url" id="url">
+                    <br>
+                    <br>
+                    <label for="ciudad">Ciudad:</label>
+                    <select name="ciudad" id="ciudad">
+                        <option value="SE">SEVILLA</option>
+                        <option value="CO">CÓRDOBA</option>
+                        <option value="JA">JAÉN</option>
+                        <option value="CA">CÁDIZ</option>
+                        <option value="HU">HUELVA</option>
+                        <option value="GR">GRANADA</option>
+                        <option value="AL">ALMERÍA</option>
+                        <option value="MA">MÁLAGA</option>
+                    </select>
+                    <br>
+                    <br>
+                    <label for="ciudadlista">Elige ciudad</label>
+                    <input list="ciudades2">
+                    <datalist id="ciudades2">
+                        <option value="SEVILLA"></option>
+                        <option value="CORDOBA"></option>
+                        <option value="JAÉN"></option>
+                        <option value="CÁDIZ"></option>
+                        <option value="HUELVA"></option>
+                        <option value="GRANADA"></option>
+                        <option value="ALMERíA"></option>
+                        <option value="MÁLAGA"></option>
+                    </datalist>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Otros datos</legend>
+
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" name="fecha" id="fecha" />
+                    <br>
+                    <br>
+                    <label for="hora">Tiempo:</label>
+                    <input type="time" name="hora" id="hora" />
+                    <br>
+                    <br>
+                    <label for="FechaHora">Fecha y Hora:</label>
+                    <input type="datetime" name="FechaHora" id="FechaHora">
+                    <br>
+                    <br>
+                    <label for="mes">Mes:</label>
+                    <input type="month" name="mes" id="mes">
+                    <br>
+                    <br>
+                    <label for="semana">Semana</label>ç
+                    <input type="text" name="semana" id="semana">
+                    <br>
+                    <br>
+                    <label for="maxmin">Minimo y Máximo</label>
+                    <input type="number" name="maxmin" id="maxmin" min="-10" max="10">
+                </fieldset>
+                <fieldset>
+                    <legend>Otros controles</legend>
+                    <span>Aficiones</span>
+                    <input type="checkbox" name="cine" id="cine"><label for="aficiones">Cine</label>
+                    <input type="checkbox" name="deporte" id="deporte"><label for="deporte">Cine</label>
+
+                    <p>Forma de pago</p>
+                    <input type="radio" name="formapago" id="visa" checked><label for="visa">Visa</label>
+                    <input type="radio" name="formapago" id="American Express"><label for="American Express">American Express</label>
+                    <input type="radio" name="formapago" id="Mastercard"><label for="Mastercard">Mastercard</label>
+                </fieldset>
+                <br>
+                <input type="submit" value="Enviar">
+
+            </form>
+        </section>
+    </main>
+    <footer>
+        <small>Copyright - DavidVillar</small>
+    </footer>
+
+</body>
+
+</html>
