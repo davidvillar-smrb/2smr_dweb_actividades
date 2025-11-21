@@ -5,6 +5,7 @@
     --color-fondo_caja: #eaf6fb;
     --color-borde_caja: #006699;
     --secondary-color: #f0fff0;
+    --color-borde-caja2: #333;
 }
 
 body {
@@ -147,4 +148,68 @@ relleno izquierdo 0.4rem. */
     border-left: 4px solid green;
     padding-left: 0.4rem;
 
+}
+
+/*Aplicar estilos comunes a las cajas
+Tamaño: ancho 100px,
+alto 80 px,
+borde 3px solido #333,
+Texto centrado vertical y horizontal. */
+
+.box {
+    float: left; /*Le decimo que se ponga a la izquierda*/
+    width: 100px;
+    height: 80px;
+    border: 3px solid var(--color-borde-caja2);
+    text-align: center; /*Centrado horizontal, en vertical tiene que especificar la altura con line-height poniendole el mismo tamaño que la caja*/
+    line-height: 80px;
+    font-weight: bold; /*Negrita*/
+    margin-right: 20px; /*Separar cajas entre sí*/
+}
+
+/*b1 -> fondo rojo claro  (#ff9999),
+solo esquina superior izquierda redondeada (16px). */
+
+.b1 {
+    background-color: #ff9999;
+    border-radius: 16px 0 0 0;
+}
+
+/*b2 -> fondo amarillo (#ffcc66),
+solo esquina superior derecha redondeada (16px). */
+
+.b2  {
+    background-color: #ffcc66;
+    border-radius: 0 16px 0 0;
+}
+
+/* b3 -> fondo verde claro (#99cc99),
+todas las esquinas redondeadas (16px)*/
+
+.b3 {
+    background-color: #99cc99;
+    border-radius: 16px;
+}
+
+.fila::after /*Esto es para que las cajas esten dentro de la caja 4*/{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+/*FOOTER 
+Texto alineado en el centro
+fondo claro
+borde superior
+letra mas pequeña que la original*/
+
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    background-color: #eee;
+    padding: 1rem;
+    border-top: 3px solid var(--primary-color);
+    border-radius: 8px 8px 0 0;
+    
 }
