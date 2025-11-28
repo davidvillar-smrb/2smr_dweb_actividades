@@ -8,8 +8,10 @@
     --color_fondo_menu_nav: #f1b4b8;
     --color_titulos: #2d07fb;
     --color_borde_discontinuo: #ff9e26;
+    --color_fondo_enlace_selec: #eeeeee;
+    --color_enlace_selec: #ff0000;
+    --color_parrafos: #008000;
 }
-
 
 body {
     box-sizing: border-box; /* Hace que las propiedades width y heigth incluyan el borde y el relleno.*/
@@ -35,14 +37,6 @@ p {
     font-family: Arial; 
 }
 
-#destacado { /*Para el parrafo con el id "destacado"*/
-    border-style: dashed;
-    border-color: var(--color_borde_discontinuo);
-    /* Otra forma de poner los 2 a la vez
-    border: dashed 2px var(--color_borde_discontinuo)*/
-    padding: 10px;
-}
-
 /*Menú de navegación de la cabecera (aunque solo haya uno por si luego añadimos alguno y no queremos el mismo estilo*/
 header nav {
     background-color: var(--color_fondo_menu_nav);
@@ -50,16 +44,22 @@ header nav {
 
 header nav ul {
     /*Cambio de relleno del bloque lista*/
-    padding-inline-start: 20px;
+    padding-left: 0px;
 }
 
 header nav li {
     /*Quitamos el punto de la viñeta*/
     list-style-type: none;
     float: left;
-    margin-right: 20px;
     margin-left: 0;
-    padding: 16px 0 16px 8px;
+    padding: 16px 20px 16px 20px;
+}
+
+header nav li:hover { 
+    /*Cambio de fondo y color de fuente cuando pasa el cursor por encima*/
+    background-color: var(--color_fondo_enlace_selec);
+    color: var(--color_enlace_selec);
+    transition: background-color 0.5s; /*Cuando pasas el cursos por encima del color del fondo tiene un retardo de 0.5 segundos*/
 }
 
 /*No quiero que ningun enlace este subrayado */
@@ -78,21 +78,52 @@ header nav::after {
     clear: both;
 }
 
-
-
-
-
-
-
-
-.container {
-    border: 5px solid indigo;
-    width: 600px;
-    height: 300px;
-    margin: 20px;
+#destacado { /*Para el parrafo con el id "destacado"*/
+    border-style: dashed;
+    border-color: var(--color_borde_discontinuo);
+    /* Otra forma de poner los 2 a la vez
+    border: dashed 2px var(--color_borde_discontinuo)*/
+    padding: 10px;
 }
 
-.middle {
-    border: 5px solid ;
+.centrado {
+    /* Contenedor Flex para las dos columnas (las cajas) */
+    display: flex;
+    padding: 20px; /* Espacio entre las dos cajas */
+    margin-top: 20px; /* Espacio entre el párrafo destacado y las cajas */
+}
+
+/* --- Estilos para las cajas de contenido --- */
+.caja {
+    flex: 1; /* Permite que ambas cajas ocupen un espacio igual (dos columnas) */
+    padding: 10px;
+    /* El color de fondo por defecto es el del body, no es necesario cambiarlo */
+}
+
+.caja:first-child {
+    border: solid var(--color_titulos); /*Borde de caja con línea, si fuera con ralla discontinua "dashed"*/
+}
+
+.caja:last-child {
+    border: solid var(--color_titulos);
+}
+
+/*Pseudoselector: Primer párrafo dentro de .caja */
+.caja p:first-child {
+    font-weight: bold;
+    text-decoration: underline;
+    color: var(--color_parrafos);
+}
+
+/*Solo se aplica al segundo párrafo dentro de la caja */
+.caja p:nth-of-type(2) {
+    clear: both; /*Fuerza a empezar debajo del flotado anterior*/
+    padding: 5px;
+    color: var(--color_parrafos);
+}
+
+.caja p:nth-of-type(3) {
+    clear: both;
+    color: var(--color_parrafos);
 }
 
