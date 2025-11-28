@@ -88,16 +88,16 @@ header nav::after {
 
 .centrado {
     /* Contenedor Flex para las dos columnas (las cajas) */
-    display: flex;
+    position: absolute;
     padding: 20px; /* Espacio entre las dos cajas */
-    margin-top: 20px; /* Espacio entre el párrafo destacado y las cajas */
+    margin-top: 60px; /* Espacio entre el párrafo destacado y las cajas */
 }
 
 /* --- Estilos para las cajas de contenido --- */
 .caja {
     flex: 1; /* Permite que ambas cajas ocupen un espacio igual (dos columnas) */
     padding: 10px;
-    /* El color de fondo por defecto es el del body, no es necesario cambiarlo */
+    margin: 10px; /*Para separar una caja de otra*/
 }
 
 .caja:first-child {
