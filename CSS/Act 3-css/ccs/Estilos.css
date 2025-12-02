@@ -10,19 +10,21 @@
     --color_borde_discontinuo: #ff9e26;
     --color_fondo_enlace_selec: #eeeeee;
     --color_enlace_selec: #ff0000;
-    --color_parrafos: #008000;
+    --color_texto: #008000;
 }
 
 body {
     box-sizing: border-box; /* Hace que las propiedades width y heigth incluyan el borde y el relleno.*/
     margin: 0 auto; /*Para centrar contenedores en la página horizontalmente */
+    width: 80%;
     background-color: var(--color_fondo_principal); /*Color amarillo del fondo principal*/
 }
 
 
+/*En vez de poner con el width: 80% puedes poner esto, pero mejor el width en el body para que se adapte a la página y quede todo por igual
 header, main, footer {
-    margin: 0 10px;
-}
+    margin: 0 20px;
+} */
 
 /*Solo se modificaran los h1 de la cabecera "header"*/
 header h1 {
@@ -84,46 +86,55 @@ header nav::after {
     /* Otra forma de poner los 2 a la vez
     border: dashed 2px var(--color_borde_discontinuo)*/
     padding: 10px;
+    background-color: #ffffcc;
 }
 
 .centrado {
-    /* Contenedor Flex para las dos columnas (las cajas) */
-    position: absolute;
-    padding: 20px; /* Espacio entre las dos cajas */
-    margin-top: 60px; /* Espacio entre el párrafo destacado y las cajas */
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.caja {
+    border: solid 2px #0000ff;
+    display: inline-block;
+    margin: 15px;
+    vertical-align: middle; /*Sirve para poner la caja en medio verticalmente, ya que se pone abajo por defecto. Para ponerla abajo, se pone "top".*/
+    color: var(--color_texto); /*Se aplica el color del texto a toda las cajas*/
+    padding: 15px;
+}
+
+.caja img {
+    width: 100px;
 }
 
 /* --- Estilos para las cajas de contenido --- */
-.caja {
-    flex: 1; /* Permite que ambas cajas ocupen un espacio igual (dos columnas) */
-    padding: 10px;
-    margin: 10px; /*Para separar una caja de otra*/
-}
-
-.caja:first-child {
-    border: solid var(--color_titulos); /*Borde de caja con línea, si fuera con ralla discontinua "dashed"*/
-}
-
-.caja:last-child {
-    border: solid var(--color_titulos);
-}
 
 /*Pseudoselector: Primer párrafo dentro de .caja */
 .caja p:first-child {
     font-weight: bold;
     text-decoration: underline;
-    color: var(--color_parrafos);
+}
+
+.izquierda {
+    float: left;
 }
 
 /*Solo se aplica al segundo párrafo dentro de la caja */
 .caja p:nth-of-type(2) {
     clear: both; /*Fuerza a empezar debajo del flotado anterior*/
     padding: 5px;
-    color: var(--color_parrafos);
 }
 
-.caja p:nth-of-type(3) {
-    clear: both;
-    color: var(--color_parrafos);
+.derecha {
+    float: right;
+    margin-right: 15px;
 }
 
+footer p:last-child {
+    font-style: italic;
+    color: #808080
+}
+
+aside {
+    float: right;
+}
