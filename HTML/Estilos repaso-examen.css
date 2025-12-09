@@ -1,0 +1,30 @@
+:root {
+    --color_fondo_header: #5D4037;
+    --color_header: white;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.mi_header {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: var(--color_fondo_header);
+    color: var(--color_header);
+    padding-top: 20px;
+}
+.mi_nav {
+    display: flex; /* Activamos flexbox*/
+    flex-flow: row nowrap; /* Los elementos van en fila y no se envuelven*/
+    height: 100px;
+    align-items: center; /* Alineamos los elementos verticalmente al centro*/
+    justify-content: space-around;
+    --padding-container: 0; /*Anulamos el padding del contenedor solo para el menu*/
+}
+a {
+    text-decoration: none;
+    color: white;
+}

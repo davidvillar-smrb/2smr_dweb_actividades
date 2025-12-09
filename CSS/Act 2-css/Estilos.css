@@ -108,6 +108,17 @@ input:focus {
     opacity: 1;
 }
 
+/* Pseudo clases:
+:hover : Cuando se coloca el ratón encima
+:active : Cuando se pincha sobre el elemento y se mantienen el botón del ratoón pulsado
+:focus : Cuando el elemento tiene foco
+
+Pseudo clases con enlaces:
+a:link : Enlace no visitado o activado por el usuario
+a:hover : Cuando se coloca el ratón sobre el enlace
+a:active : Cuando se pincha sobre el enlace
+a:visited: Enlace ya visitado por el usuario*/
+
 /*Caja (.caja):
 Fondo azul claro (#eaf6fb),
 Borde 3px solido #006699,
