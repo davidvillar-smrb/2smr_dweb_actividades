@@ -1,0 +1,96 @@
+/*/*Vamos a crear una variable desde la pseudoclase root para poder acceder a
+estas variables desde cualquier parte del documento*/
+:root {
+    --color-bg-dark: #1a1a1a; /*Fondo general claro lila suave*/
+    --color-bg-section: #242323; /*Fondo secciones más claro*/
+    --color-surface-light: #afa8be; /*Superficies claras (tarjetas, paneles)*/
+    --color-accent: #8b5cf6; /*Acento principal (lila moderno)*/
+    --color-accent-alt: #9873ee; /*Acento secundario (turquesa suave)*/
+    --color-text-main: #f0f0f0; /*Texto pincipal oscuro*/
+    --color-accent-shacow: rgba(139,  92, 246, 0.5); /*Sombra suave lila basada en el color-accent*/
+}
+/*Reseteo de margenes y paddings y boz-sizing para que el padding y border se
+incluyan dentro del width y height y Fuente para todo el documento*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif, Arial, Helvetica;
+}
+body { /* Color de la pagina gris */
+    background-color: var(--color-bg-dark); /*Color de fondo*/
+    color: var(--color-text-main); /*Color de texto*/
+    display: flex; /*Activamos Flex*/
+    justify-content: center; /*Centrado de contenedores horizontalmente*/
+    flex-direction: column;
+}
+.header {
+    display: flex;
+    justify-content: space-between; /*Sirve para separarlos entre sí*/
+    background-color: var(--color-bg-section); /*Color de fondo*/
+    border-bottom: 3px var(--color-accent); /*Borde inferior*/
+    padding: 0 40px; /*Margen de 40px a la izquierda y derecha*/
+    align-items: center; /*Elementos alineados verticalmente al centro*/
+    padding: 20px 0; /*Margen superior e inferior de 20px*/
+}
+.mi_lista{
+    list-style: none;
+    display: flex; /*Alineación horizontal*/
+    gap: 20px; /*Separación entre enlaces*/
+}
+.header a {
+    text-decoration: none; /*Quitar subrayado*/
+    color: var(--color-text-main); /*Color del texto*/
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+a {
+    text-decoration: none;
+    color: var(--color-accent);
+}
+a:hover {
+    color: var(--color-accent);
+    transition: color ease 0.3s; /*Retardo de 0.3 segs al poner el cursor encima*/
+}
+.section1 {
+    display: flex;
+    flex-direction: row-reverse; /* Cambio de orden al revés*/
+    background-color: var(--color-bg-section);
+    padding: 30px 24px;
+    flex: 0 0 320px;
+    align-items: center;
+    margin-top: 24px;
+    border-radius: 16px;
+}
+.crear_cuenta {
+    border-color: 2px solid var(--color-accent);
+    background-color: var(--color-bg-dark);
+    padding: 25px;
+    border-radius: 10px; /*Borde de alrdedor*/
+}
+.Boton {
+    background-color: var(--color-accent);
+    color: black;
+}
+.section2 {
+    width: 70%;
+}
+.section2 h2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid grey;
+}
+.mi_footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-bg-section);
+    margin-top: 20px;
+    font-size: 0.9rem;
+    justify-content: space-evenly;
+}
+.mi_footer a {
+    text-decoration: none;
+    color: var(--color-accent);
+}
